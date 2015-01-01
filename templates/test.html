@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/foundation.min.js"></script>
+</head>
+<body>
+	<div id="main-container">
+		<!-- Header  -->
+		<div id="header">
+			  	<div class="row">
+    				<div class="large-3 columns">
+     					 <a href="/"><h2>FreeCharge Coupons</h2></a>
+    				</div>
+    				<div class="large-9 columns">
+      					<ul class="inline-list right">
+       						<li><a class="headerlink" href={{ url_for('alertView') }}>Alert</a></li>
+        					<li><a class="headerlink" href={{ url_for('submitCoupon') }}>Submit Coupon</a></li>
+        					<li><a class="headerlink" href={{ url_for('signup') }}>Login | Signup</a></li>
+      					</ul>
+    				</div>
+ 				</div>
+ 				<hr />
+		</div>
+		<!-- About Page -->
+		<div id="about-desc">
+			<h1>about FreeChargeCoupons</h1>
+			<p>Want to know who we are? We are FreeCharge, a business unit of Accelyst Solutions Pvt. Ltd. And our focus is to create an innovative channel that can deliver more for less to the Indian consumer.</p>
+
+			<p>We don't just make the process of recharging convenient, we make it rewarding, by way of discount coupons. And while we're at it, our super efficient and professionally sound team makes sure our customers are 100% satisfied. Today, we help customers recharge their prepaid mobile phones, DTH connections or data cards, but wait and watch what we get into next. Whatever it is, we promise to make it just as rewarding!</p>
+
+			<p>Wait, we know what you're thinking - How is this rewarding? Is all this really free? Well, for every recharge done on FreeCharge, we give you discount coupons from top food joints and popular retailers, equivalent to your recharge amount, delivered to your mobile, inbox or doorstep. Use the coupons to save money when you eat out, watch movies, book travel tickets, shop online, visit a salon, go gaming, pick up books, music, groceries, and live a rewarding life!</p>
+			<hr />
+		</div>
+		<!-- List View of Coupons -->
+		<div class="listview-container">
+			<div class="row">
+				<!-- Sidebar Intilization -->
+				<div class="large-4 ">
+					<div id="sidebar">
+						<h1>Sidebar</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est repellendus praesentium sequi recusandae magnam, rerum inventore, qui deserunt quia vitae obcaecati possimus, illum dicta dolores ex blanditiis corporis consectetur accusantium.</p>
+						<a href="http://www.gunrox.com/"><img src="http://www.gunrox.com/img/banners/240x400-1.jpg" width="300" height="400" border="0"/></a>
+
+					</div>
+				</div>
+				<!-- Coupon List -->
+				
+					{% for coupon in coupon %}
+					<div class="large-8 ">
+					<div id="listbox">
+						
+						<div class="status">{{ coupon.status}}</div>
+						<div class="title"><h2>{{ coupon.title }}</h2></div>
+						<div class="description"><p>{{ coupon.description }}</p></div>
+						<ul class="inline-list center">
+						<li><div class="expirydate">Exp. Date : {{ coupon.expirydate }}</div></li>
+						<li><div class="coupon"><a href={{ url_for('detailView',uid=coupon.uid) }}>{{ coupon.coupon }}</a></div></li>
+						<li>
+							<div class="share">Fb</div>
+						</li>
+						<li>
+							<div class="share">Tw</div>
+						</li>
+						<li>
+							<div class="share">G+</div>
+						</li>
+						</ul>
+						
+					</div>
+					</div>
+					{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
