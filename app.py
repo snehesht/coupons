@@ -60,12 +60,11 @@ def index():
 #		title="Rs.100 Off on recharge of Rs.500 or above",category="FreeCharge",
 #		categoryid=2,subcategory="Mobile",description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptatibus vero quam obcaecati ipsa! Quaerat voluptatem ipsa, perferendis deserunt asperiores, repellat dolore incidunt vero atque ducimus rerum nostrum excepturi! Aperiam.",
 #		coupon="FC100").save()
-	app.logger.debug(CouponCode.objects.count())
 	return render_template('test.html',coupon=CouponCode.objects())
 
 @app.route('/coupon/<string:uid>')
 def detailView(uid):
-	pass
+	return render_template('detailedview.html')
 
 @app.route('/alert')
 def alertView():
@@ -74,7 +73,6 @@ def alertView():
 @app.route('/submit-coupon')
 def submitCoupon():
 	pass
-
 
 ## 2. Admin Panel View  #########################
 @app.route('/admin')

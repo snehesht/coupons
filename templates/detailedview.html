@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/foundation.min.js"></script>
+  <script type="text/javascript" src="../static/ZeroClipboard.min.js"></script>
+  <script type="text/javascript" src="../static/ZeroClipboard-main.js"></script>
+</head>
+<body>
+	<div id="main-container">
+		<!-- Header  -->
+		<div id="header">
+			  	<div class="row">
+    				<div class="large-3 columns">
+     					 <a href="/"><h2>FreeCharge Coupons</h2></a>
+    				</div>
+    				<div class="large-9 columns">
+      					<ul class="inline-list right">
+       						<li><a class="headerlink" href={{ url_for('alertView') }}>Alert</a></li>
+        					<li><a class="headerlink" href={{ url_for('submitCoupon') }}>Submit Coupon</a></li>
+        					<li><a class="headerlink" href={{ url_for('signup') }}>Login | Signup</a></li>
+      					</ul>
+    				</div>
+ 				</div>
+ 				<hr />
+		</div>
+    <div class="row">
+      <div class="large-6">
+      <button id="copy-button" data-clipboard-text="Copy Me!" title="Click to copy me.">Copy to Clipboard</button>
+      </div>
+    </div>
+ 
+  <div>
+ </body>
+ </html>   

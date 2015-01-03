@@ -4,8 +4,21 @@
 	<link rel="stylesheet" type="text/css" href="../static/style.css">
 	<script type="text/javascript" src="../static/jquery.js"></script>
 	<script type="text/javascript" src="../static/foundation.min.js"></script>
+	<script type="text/javascript" src="../static/ZeroClipboard.min.js"></script>
+ 	<script type="text/javascript" src="../static/ZeroClipboard-main.js"></script>
 </head>
 <body>
+	<!-- Facebook Share Buttons -->
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+  			var js, fjs = d.getElementsByTagName(s)[0];
+  			if (d.getElementById(id)) return;
+  			js = d.createElement(s); js.id = id;
+  			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+
 	<div id="main-container">
 		<!-- Header  -->
 		<div id="header">
@@ -56,9 +69,9 @@
 						<div class="description"><p>{{ coupon.description }}</p></div>
 						<ul class="inline-list center">
 						<li><div class="expirydate">Exp. Date : {{ coupon.expirydate }}</div></li>
-						<li><div class="coupon"><a href={{ url_for('detailView',uid=coupon.uid) }}>{{ coupon.coupon }}</a></div></li>
+						<li><button id="coupon-copy-button" data-clipboard-text={{ coupon.coupon }} title="Click to copy me.">{{ coupon.coupon }}</button></li>
 						<li>
-							<div class="share">Fb</div>
+						<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
 						</li>
 						<li>
 							<div class="share">Tw</div>
